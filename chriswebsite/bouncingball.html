@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Bouncing ball game/animation.</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="validation.html">Form validation</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+<body>
+
+<!--Information about site and me -->
+<div class="a">
+
+
+<h1>
+Bouncing Ball animation
+</h1>
+<p>
+Click anywhere on the canvas to place the ball. 
+</p>
+
+<canvas id="game" width="600" height="600"></canvas>
+
+</div>
+
+
+<script>
+var canvas;
+var x, y;
+var dx=5;
+var dy=4;
+var d = 10;
+var width, height;
+
+function init() {
+    canvasE = document.getElementById('game');
+    canvas= canvasE.getContext('2d');
+    width = canvasE.width;
+    height = canvasE.height;
+    x = d+dx+1;
+    y = d+dy+1;
+    canvasE.addEventListener("click", onClick, false);
+
+    clear();
+    canvas.beginPath();
+    canvas.fillStyle="#0000ff";
+    
+    canvas.arc(x-1,y-1,d,0,Math.PI*2,true);
+    canvas.closePath();
+    canvas.fill();
+    requestAnimationFrame(loop);
+    
+    
+}
+
+function loop() {
+    clear();
+
+    canvas.beginPath();
+    canvas.fillStyle="000000";
+    
+    canvas.arc(x,y,d,0,Math.PI*2,true);
+    canvas.closePath();
+    canvas.fill();
+    
+    if( x<(d-dx)+1 || x>width-(d+dx)-1)
+    dx=-dx;
+    
+    if( y<(d-dx)+1 || y>height-(d+dy)-1) 
+    dy=-dy;
+    
+   
+    
+    
+    x+=dx;
+    y+=dy;
+    requestAnimationFrame(loop);
+    
+   
+}
+
+
+function clear() {
+    canvas.fillStyle="#ffffff";
+    canvas.fillRect(0,0,width,height);
+    canvas.fillStyle="#888888";
+    canvas.strokeRect(0,0,width,height);
+}
+
+function onClick(e) {
+    var element = canvasE;
+    var offsetX = 0, offsetY = 0
+
+        if (element.offsetParent) {
+      do {
+        offsetX += element.offsetLeft;
+        offsetY += element.offsetTop;
+      } while ((element = element.offsetParent));
+    }
+
+    x = e.pageX - offsetX;
+    y = e.pageY - offsetY;
+}
+
+init();
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+</script>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+h1 { display:block; width:600px; margin:20px auto; padding-bottom:10px; font:normal 24px/30px Georgia, "Times New Roman", Times, serif; color:#333; text-shadow: 1px 2px 3px #ccc; border-bottom:1px solid #cbcbcb; }
+
+body { background-color:#ffcc80; font:normal 12px/18px Arial, Helvetica, sans-serif; }
+</style>
+
+</body>
+
+ <head>
+ <style type ="text/css" >
+   .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 25px; 
+       width: 100%;
+       
+   }  
+</style>
+</head>
+<div class="footer">
+	<p>Created and coded by Christopher Faircloth</p>
+</div>

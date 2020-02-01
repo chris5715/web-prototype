@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Classic Pong for One!</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="validation.html">Form validation</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+<div align="center" style="padding: 50px">
+
+
+<BODY>
+    <canvas id="myCanvas" width="600" height="600" style="border:8px solid #00000; background: #0d0d0d" />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</BODY>
+</div>
+<script>
+var Main = {};                                      // scope a (global) main object
+var mySound;
+var mySound2;
+var mySound3;
+
+Main.Canvas = document.getElementById('myCanvas');                  
+Main.Context = Main.Canvas.getContext('2d');                         
+Main.MX = 0;                                        // keep track of X mouse position
+Main.MY = 0;    
+
+Main.CX = 395;
+Main.CY = 150;      
+Main.CRAD = 8;  // size of the ball
+
+
+Main.XINC = 4;  //x axis speed. Main.XINC in line 200 and Main.XINC in line 147 MUST be the same value.
+Main.YINC = 4;  //y axis speed
+Main.OFFSET = 15;    
+
+Main.HITS = 0;
+Main.MISSES = 0;
+mySound = new sound("pong2.wav");
+mySound2 = new sound("https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-35448/zapsplat_multimedia_game_sound_classic_jump_001_41726.mp3");
+mySound3 = new sound("pong3.wav");
+mySound4 = new sound("https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-35448/zapsplat_multimedia_game_sound_classic_1_up_003_41734.mp3");
+
+//Things to add
+
+//Add sound for every 2 hits
+
+
+
+
+// keep track of mouse movements
+Main.Canvas.onmousemove = function(event)
+{
+    if (event.offsetX)
+    {
+        mouseX = event.offsetX;
+        mouseY = event.offsetY;
+    }
+    else if (event.layerX)
+    {
+        mouseX = event.layerX;
+        mouseY = event.layerY;
+    }
+
+    Main.MX = mouseX;
+    Main.MY = mouseY;
+}
+
+Main.Animate = function()
+{
+    Main.Context.clearRect(0, 0, Main.Canvas.width, Main.Canvas.height);        
+                                            
+
+    // Paddle
+    Main.Context.fillStyle = "#ffffff";                         
+    Main.Context.fillRect(15, Main.MY, 15, 60);                  
+
+    // Ball
+    Main.Context.beginPath();                           
+    Main.Context.strokeStyle = 'white';
+    
+
+    // When ball crosses the paddle width, 
+    // check to see if paddle intersects path
+    
+    
+    if ( (Main.CX-Main.CRAD == 15) && (Main.XINC == -4) ) {
+
+        // if ball hits paddle, change increment (both X & Y) and change color of circle
+        if ( (Main.CY>Main.MY) && (Main.CY<(Main.MY+50)) ){
+
+						//speed multiplied by when ball hits paddle
+            Main.XINC = Main.XINC * (-1);
+            Main.YINC = Main.YINC * (-1);
+
+            Main.HITS = Main.HITS + 1;
+            Main.Context.beginPath();
+            Main.Context.strokeStyle = 'white';
+            
+            mySound.play();
+
+        } else{ 
+        Main.MISSES = Main.MISSES + 1;
+        Main.Context.beginPath();
+        Main.Context.strokeStyle = 'white';
+        
+        mySound3.play();
+				}
+    }
+
+    // hit wall x coordinate change x direction
+    if ( (Main.CX < 0+Main.CRAD) || (Main.CX > 600-Main.CRAD)) 
+    //speed multiplied by if hits x wall
+        Main.XINC = Main.XINC * (-1);
+        //mySound2.play();
+    
+    Main.CX = Main.CX + (Main.XINC);
+    
+
+    // hit wall y coordinate change y direction
+    if ( (Main.CY < 0+Main.CRAD) || (Main.CY > 600-Main.CRAD)) 
+    //speed multiplied by if hits y wall
+        Main.YINC = Main.YINC * (-1);
+    Main.CY = Main.CY + Main.YINC;  
+
+    Main.Context.arc(Main.CX, Main.CY, Main.CRAD, 0, 2 * Math.PI);          // draw circle
+    Main.Context.stroke();                              // fill circle
+    Main.Context.fillStyle = "white";
+		Main.Context.fill();
+
+
+		//location of ball and paddle. X and Y
+    Main.Context.font = "10px Arial";
+    Main.Context.fillText("Mouse: X: " + Main.MX + "  Y: " + Main.MY, 50, 25);
+    Main.Context.fillText("Ball: X: " + Main.CX + "  Y: " + Main.CY, 180, 25);
+
+    // Display the score
+    Main.Context.font = "30px Techno";
+    Main.Context.fillText("Hits: " + Main.HITS + "  Misses: " + Main.MISSES, 340, 30);
+    
+    
+    if(Main.MISSES == 10){
+    Main.Context.font = "50px Techno";
+    Main.Context.fillText("Game Over", 190, 300)
+    mySound2.play();
+    Main.Animate.pause();
+   
+    };
+    
+    if(Main.HITS == 10){
+    Main.Context.font = "50px Techno";
+    Main.Context.fillText("You Win", 210, 300)
+    mySound4.play();
+    Main.Animate.pause();
+    };
+    
+
+    requestAnimFrame(function() { Main.Animate(); });               
+}
+
+window.requestAnimFrame = (function(callback)                                           
+{                                           
+    return window.requestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.oRequestAnimationFrame
+    || window.msRequestAnimationFrame
+    || function(callback) { window.setTimeout(callback, 1000 / 60); };      
+})();
+
+$(document).ready(function()                                
+{
+    Main.Animate();                                 
+});
+// for game sounds
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
+/*
+document.getElementById('button1').onclick = function() {
+Main.XINC = 1;
+Main.YINC = 1;
+   (Main.CX-Main.CRAD == 15) && (Main.XINC == -1)
+};*/
+
+</script>
+
+
+
+
+<head>
+</head>
+<div class="footer">
+	<p>Created and coded by Christopher Faircloth</p>
+</div>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Json page.</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="validation.html">Form validation</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+<body>
+
+<!--Json code -->
+<div class="e">
+
+
+<head>
+
+
+<!--LINK JQUERY-->
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<!--PERSONAL SCRIPT JavaScript-->
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js">
+   $(function(){
+      alert("My First Jquery Test");
+   });
+</script>
+
+<script src="jsondata.js"></script>
+
+<br/>
+<div id="chartContainer" style="height: 360px; width: 100%;"></div>
+
+</head>
+
+
+</div>
+
+</body>
+
+<body>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script>
+ 
+ function addData(jsonData) {
+	var currentXVal = new Date(jsonData.start).getTime();
+
+	for(var i = 0; i < jsonData.data.length; i++, currentXVal += 5 * 60 * 1000) {
+		chart.options.data[0].dataPoints.push({x: currentXVal, y: jsonData.data[i][0]});
+		chart.options.data[1].dataPoints.push({x: currentXVal, y: jsonData.data[i][1]});
+    chart.options.data[2].dataPoints.push({x: currentXVal, y: jsonData.data[i][2]});
+	}
+
+	chart.render();
+}
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "Satellite data signal"
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [{
+			type: "line",
+			name: "Up Link",
+			xValueType: "dateTime",
+			xValueFormatString: "hh:mm TT",
+			dataPoints: []
+		},{
+			type: "line",
+			name: "Down Link",
+			xValueType: "dateTime",
+			xValueFormatString: "hh:mm TT",
+			dataPoints: []
+    },{
+    type: "line",
+			name: "Distance",
+			xValueType: "dateTime",
+			xValueFormatString: "hh:mm TT",
+			dataPoints: []
+    
+	}]
+});
+
+$.getJSON("https://api.myjson.com/bins/19gp9d", addData);
+
+ </script>
+</body>
+
+
+ <head>
+ <style type ="text/css" >
+   .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 25px; 
+       width: 100%;
+       
+   }  
+</style>
+</head>
+<div class="footer">
+	<p>Created and coded by Christopher Faircloth</p>
+</div>

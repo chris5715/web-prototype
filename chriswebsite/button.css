@@ -1,0 +1,74 @@
+.but1 {
+	background-color:#44c767;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:5px 12px;
+	text-decoration:none;
+	text-shadow:-1px -1px 3px #2f6627;
+}
+.but1:hover {
+	background-color:#5cbf2a;
+}
+.but1:active {
+	position:relative;
+	top:1px;
+}
+
+.but2 {
+	background-color:#ffec64;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:16px;
+	padding:5px 12px;
+	text-decoration:none;
+	text-shadow:-1px -1px 3px #ffee66;
+}
+.but2:hover {
+	background-color:#ffab23;
+}
+.but2:active {
+	position:relative;
+	top:1px;
+}
+
+
+.but3 {
+	background-color:#7892c2;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:5px 12px;
+	text-decoration:none;
+	text-shadow:-1px -1px 3px #283966;
+}
+.but3:hover {
+	background-color:#476e9e;
+}
+.but3:active {
+	position:relative;
+	top:1px;
+}
+
+.square2 {
+    z-index: 1;
+    background: #e6e6e6;
+    padding-left: 120px;
+    padding-right: 120px;
+    bottom: 10px;
+    opacity: 0.9;
+    
+    /* width: 50vw;
+    height: 100vw; */
+}
+
+.j2 { margin: 0px auto; }

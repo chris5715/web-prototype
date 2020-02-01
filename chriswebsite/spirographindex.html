@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Spirograph.</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="validation.html">Form validation</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+<body>
+
+<!--Spirograph -->
+
+<link rel="stylesheet" type="text/css" href="button.css" />
+<script src="spirographjava.js"></script>
+<style>
+div.j1 {
+  text-align: center;
+  position: center;
+  z-index: 2;
+}
+
+
+</style>
+<div class="j1">
+<div class="square2">
+
+
+
+<canvas id="myCanvas" width="500" height="500"
+style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+<p>
+  <button onclick="draw(context)" class="but2">Draw SpiroGraph</button>
+  <button onclick="graphWarp(context)" class="but3">Random SpiroGraph</button>
+  
+  <a id="download" download="SpiroGraph.jpg" href="" onclick="download_img(this);" class="but1">Download SpiroGraph</a>
+</p>
+
+
+<script>
+
+download_img = function(el) {
+  var image = canvas.toDataURL("image/jpg");
+  el.href = image;
+};
+</script>
+
+
+<table class="j2">
+
+
+
+  <tr>
+      <td>R</td>
+      <td><input id="R" value="92" type="number" onchange="draw(context)"></td>
+  </tr>
+  <tr>
+      <td>r</td>
+      <td><input id="r" value="34" type="number" onchange="draw(context)"></td>
+  </tr>
+  <tr>
+      <td>O</td>
+      <td><input id="O" value="70" type="number" onchange="draw(context)"></td>
+  </tr>
+  
+   
+  <tr>
+      <td>T-Ratio</td>
+      <td><input id="t" value="1.9" type="number" step="0.1" onchange="draw(context)"></td>
+  </tr>
+  
+  <tr>
+    <td>Color</td>
+    <td><select id="opt">
+  <option value="Red">Red</option>
+  <option value="Blue">Blue</option>
+  <option value="Green">Green</option>
+  <option value="Yellow">Yellow</option>
+  <option value="Orange">Orange</option>
+  <option value="Black">Black</option>
+</select></td>
+  </tr>
+  
+</table>
+
+<h3>
+Pre-set SpiroGraphs
+</h3>
+<p>
+  <button onclick="drawSpiroGraph(68,28,10,7.1,context);">Flower</button>
+  <button onclick="drawSpiroGraph(80,48,52,3.2,context);">Star</button>
+  <button onclick="drawSpiroGraph(93,6,12,4.8,context);">Sun Flower</button>
+  <button onclick="drawSpiroGraph(20,30,19,4.8,context);">Wankle Engine</button>
+  <button onclick="drawSpiroGraph(48,18,71,8.8,context);">Atomic Power</button>
+</p>
+
+<script>
+//Restricts user to only enter integers
+function setInputFilter(textbox, inputFilter) {
+  ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+    textbox.addEventListener(event, function() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (this.hasOwnProperty("oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      }
+    });
+  });
+}
+
+setInputFilter(document.getElementById("R"), function(value) {
+  return /^-?\d*[.,]?\d*$/.test(value); });
+  
+setInputFilter(document.getElementById("r"), function(value) {
+  return /^-?\d*[.,]?\d*$/.test(value); });
+  
+setInputFilter(document.getElementById("O"), function(value) {
+  return /^-?\d*[.,]?\d*$/.test(value); });  
+  
+setInputFilter(document.getElementById("t"), function(value) {
+  return /^-?\d*[.,]?\d*$/.test(value); }); 
+</script>
+</div>
+</div>
+
+</body>
+
+ <head>
+ <style type ="text/css" >
+   .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 25px; 
+       width: 100%;
+       
+   }  
+</style>
+</head>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+
+
+//manual draw
+function draw(ctx){
+  let R = parseInt(document.getElementById("R").value);
+  let r = parseInt(document.getElementById("r").value);
+  let O = parseInt(document.getElementById("O").value);
+  let t = parseFloat(document.getElementById("t").value);
+  
+  drawSpiroGraph(R,r,O,t,ctx);
+}
+
+//random draw
+function graphWarp(ctx){
+	
+  let R = Math.floor(Math.random() * Math.floor(100))
+  let r = Math.floor(Math.random() * Math.floor(70))
+  let O = Math.floor(Math.random() * Math.floor(100))
+  let t = (Math.floor(Math.random() * 100) / 10) + 0.1
+  //let t1 = Math.floor(Math.random() * Math.floor(10))
+ //let t2 = Math.random();
+ // let t = t1 + t2;
+  document.getElementById('R').value = R;
+  document.getElementById('r').value = r;
+  document.getElementById('O').value = O;
+  document.getElementById('t').value = t;
+  drawSpiroGraph(R,r,O,t,ctx);
+}
+
+
+
+
+function drawSpiroGraph(R,r,O,tRatio,ctx){
+//var canvas = document.getElementById("myCanvas");
+//var ctx = canvas.getContext("2d");
+var xCenter = canvas.width / 2 ;
+var yCenter = canvas.height / 2 ;
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 
+
+    ctx.moveTo(xCenter, yCenter); // change to canvas divided by 2
+    ctx.beginPath();
+   
+    for (var i = 0; i < 720; i+=0.01) {
+
+        let t  = tRatio * i;
+       
+        
+        
+        //let x = xCenter + ((R-r)*Math.cos(t) + (r+O)*Math.cos(((R-r)/r)*t));
+				//let y = yCenter - ((R-r)*Math.sin(t) - (r+O)*Math.sin(((R-r)/r)*t));
+        
+        let x = xCenter + ((R-r)*Math.cos(t) + (r+O)*Math.cos(((R-r)/r)*t));
+				let y = yCenter - ((R-r)*Math.sin(t) - (r+O)*Math.sin(((R-r)/r)*t));
+        
+        //let x = xCenter + ((R+r)*Math.cos(t) - (r+O)*Math.cos(((R+r)/r)*t));
+				//let y = yCenter - ((R+r)*Math.sin(t) - (r+O)*Math.sin(((R+r)/r)*t));
+        /*
+			R is the radius of the outer (fixed) circle,
+			r is the radius of the rotating (inner) circle, and
+			O is the offset of the pen from the center of the inner circl
+      */
+        ctx.lineTo(x, y);
+    }
+    
+    var opt = document.getElementById('opt');
+    if (opt.value == "Red"){
+    	ctx.strokeStyle = "#b30000";
+    }
+    if (opt.value == "Blue"){
+    	ctx.strokeStyle = "#0000ff";
+    }
+    if (opt.value == "Green"){
+    	ctx.strokeStyle = "#00b300";
+    }
+    if (opt.value == "Yellow"){
+    	ctx.strokeStyle = "#e6e600";
+    }
+    if (opt.value == "Orange"){
+    	ctx.strokeStyle = "#ff9900";
+    }
+    if (opt.value == "Black"){
+    	ctx.strokeStyle = "#000000";
+    }
+    
+    //ctx.strokeStyle = "#6d9700";
+    ctx.stroke();
+    
+}
+</script>

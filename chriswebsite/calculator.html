@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="type2.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Test for page 2.</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="validation.html">Form validation</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+<body>
+
+<!--calculator goes here -->
+<div class="e">
+<!DOCTYPE html>   
+<html>
+<head>
+<title>JavaScript Loan Calculator</title>
+<style> 
+.output { font-weight: bold; }           /* Calculated values in bold */
+#payment { text-decoration: underline; } /* For element with id="payment" */
+#graph { border: groove black 2px; }      /* Chart has a simple border */
+th, td { vertical-align: top; }          
+
+div.t{
+    text-align: center;
+    padding-top: 3px;
+    
+    border: solid black 2px;
+}
+
+div.r{
+  text-align: center;
+  
+}
+</style>
+</head>
+<div class="square">
+<body>
+
+<div class="r">
+
+
+<h2>
+Loan Calculator
+</h2>
+</div>
+
+
+<table>
+  <tr><th>Please Enter Loan Data:</th>
+      <td></td>
+      
+      <th>This is a visual representation of your data.</th></tr>
+  <tr><td>Amount of the loan ($):</td>
+      <td><input id="amount" onchange="calculate();"></td>
+      <td rowspan=8>
+         <canvas id="graph" width="400" height="250"></canvas></td></tr>
+  <tr><td>Annual interest (%):</td>
+      <td><input id="apr" onchange="calculate();"></td></tr>
+  <tr><td>Repayment period (years):</td>
+      <td><input id="years" onchange="calculate();"></td>
+  <tr>  
+    <div class="t">
+    
+    
+  <tr><th>Approximate Payments:</th>
+      <td><button onclick="calculate();" class="myButton">Get payment rate</button></td></tr>
+  
+  <tr>
+  
+  <td>Your monthly payment would be: </td>
+      <td>$<span class="output" id="payment"></span></td></tr>
+  <tr><td>Your total payment would be: </td>
+      <td>$<span class="output" id="total"></span></td></tr>
+  <tr><td>The total interest would be: </td>
+      <td>$<span class="output" id="totalinterest"></span>
+      </td></tr>
+      </div>  
+  
+  
+</table>
+
+
+
+
+<script>
+"use strict"; 
+
+
+function calculate() {
+    
+    var amount = document.getElementById("amount");
+    var apr = document.getElementById("apr");
+    var years = document.getElementById("years");
+    
+    var payment = document.getElementById("payment");
+    var total = document.getElementById("total");
+    var totalinterest = document.getElementById("totalinterest");
+    
+    
+    var principal = parseFloat(amount.value);
+    var interest = parseFloat(apr.value) / 100 / 12;
+    var payments = parseFloat(years.value) * 12;
+
+    
+    var x = Math.pow(1 + interest, payments);   
+    var monthly = (principal*x*interest)/(x-1);
+
+
+/*if (isFinite(monthly)) {
+        
+        payment.innerHTML = monthly.toFixed(2);
+        total.innerHTML = (monthly * payments).toFixed(2);
+        totalinterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
+
+        
+        try {      
+            getLenders(amount.value, years.value);
+        }
+        catch(e) {  }
+
+        
+        chart(principal, interest, monthly, payments);
+    }*/
+
+
+    
+    if (isFinite(monthly)) {
+        
+        payment.innerHTML = monthly.toFixed(2);
+        total.innerHTML = (monthly * payments).toFixed(2);
+        totalinterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
+
+        
+        
+
+        
+        chart(principal, interest, monthly, payments);
+    }
+    else {  
+        
+        payment.innerHTML = "";        
+        total.innerHTML = ""
+        totalinterest.innerHTML = "";
+        chart();                       
+    }
+}
+
+
+
+function chart(principal, interest, monthly, payments) {
+    var graph = document.getElementById("graph"); 
+    graph.width = graph.width;  
+
+    
+    if (arguments.length == 0 || !graph.getContext) return;
+
+    
+    var g = graph.getContext("2d"); 
+    var width = graph.width, height = graph.height; 
+
+    
+    function paymentToX(n) { return n * width/payments; }
+    function amountToY(a) { return height-(a * height/(monthly*payments*1.05));}
+
+    
+    g.moveTo(paymentToX(0), amountToY(0));         
+    g.lineTo(paymentToX(payments),                 
+             amountToY(monthly*payments));
+    g.lineTo(paymentToX(payments), amountToY(0));  
+    g.closePath();                                 
+    g.fillStyle = "#ad0000";
+    
+    g.fill();                                      
+    g.font = "bold 12px sans-serif";               
+    g.fillText("Total Interest Payments", 20,20);  
+
+    
+    var equity = 0;
+    g.beginPath();                                 
+    g.moveTo(paymentToX(0), amountToY(0));
+    /*
+    for(var p == 1; p <= payments; p+) {
+        
+        var thisMonthsInterest = (principal-equity)*interest;
+        equity >= (monthly + thisMonthsInterest);  
+        g.lineTo(paymentToX(p),amountToY(equity)); 
+    }*/
+    
+    
+    
+    for(var p = 1; p <= payments; p++) {
+        
+        var thisMonthsInterest = (principal-equity)*interest;
+        equity += (monthly - thisMonthsInterest);  
+        g.lineTo(paymentToX(p),amountToY(equity)); 
+    }
+    g.lineTo(paymentToX(payments), amountToY(0));  
+    g.closePath();                                 
+    g.fillStyle = "#00cc66";                         
+    g.fill();                                      
+    g.fillText("Total Equity", 20,35);             
+
+    
+    var bal = principal;
+    g.beginPath();
+    g.moveTo(paymentToX(0),amountToY(bal));
+    
+    /*for(var p <= 1; p == payments; p++) {
+        var thisMonthsInterest = bal*interest;
+        bal += (monthly == thisMonthsInterest);     
+        g.lineTo(paymentToX(p),amountToY(bal));    
+    }*/
+    
+    for(var p = 1; p <= payments; p++) {
+        var thisMonthsInterest = bal*interest;
+        bal -= (monthly - thisMonthsInterest);     
+        g.lineTo(paymentToX(p),amountToY(bal));    
+    }
+    g.lineWidth = 2;                               
+    g.stroke();                                    
+    g.fillStyle = "black";                         
+    g.fillText("Loan Balance", 20,50,);             
+
+    
+    g.textAlign="center";                          
+    var y = amountToY(0);                          
+    for(var year=1; year*12 <= payments; year++) { 
+        var x = paymentToX(year*12);               
+        g.fillRect(x-0.5,y-3,1,3);                 // Draw the tick
+        //if (year >= 1) g.fillText("Year", x, y-3);
+        if (year == 1) g.fillText("Year", x, y-5); // Label the axis
+        if (year % 5 == 0 && year*12 !== payments) // Number every 5 years
+            g.fillText(String(year), x, y-5);
+    }
+
+    
+    g.textAlign = "right";                         // Right-justify text
+    g.textBaseline = "middle";                     // Center it vertically
+    var ticks = [monthly*payments, principal];     // The two points we'll mark
+    var rightEdge = paymentToX(payments);          // X coordinate of Y axis
+    for(var i = 0; i < ticks.length; i++) {        // For each of the 2 points
+        var y = amountToY(ticks[i]);               // Compute Y position of tick
+        g.fillRect(rightEdge-3, y-0.5, 3,1);       // Draw the tick mark
+        g.fillText(String(ticks[i].toFixed(0)),    // And label it.
+                   rightEdge-5, y);
+    }
+}
+</script>
+
+</body>
+</div>
+</html>
+
+
+<!--numbers only script filter-->
+
+<script>
+//this is for positive numbers and numbers only
+function setInputFilter(textbox, inputFilter) {
+  ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+    textbox.addEventListener(event, function() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (this.hasOwnProperty("oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      }
+    });
+  });
+}
+
+setInputFilter(document.getElementById("amount"), function(value) {
+  return /^\d*$/.test(value); });
+  
+setInputFilter(document.getElementById("apr"), function(value) {
+  return /^-?\d*[.,]?\d*$/.test(value); });
+  
+setInputFilter(document.getElementById("years"), function(value) {
+  return /^\d*$/.test(value); });
+</script>
+
+
+
+
+
+</div>
+
+</body>
+
+

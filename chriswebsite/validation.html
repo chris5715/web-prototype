@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+div.g {
+  text-align: justify;
+  padding-left: 110px;
+  padding-right: 110px;
+  color: black;
+}
+
+div.zip{
+  padding-right: 250px;
+  
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Form validation.</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+<body>
+<div class="g">
+
+
+
+<link rel="stylesheet" href="type1.css">
+
+
+<!--Form code begins here-->
+<div class="square">
+<body onload='validateBirthDay();'>
+<div id="form" class="fb-theme-default">
+
+<form 
+    id="fb_form34"
+    action="mailto:christopher_faircloth@daytonastate.edu"
+    method="post" 
+    autocomplete="on"
+    onSubmit="if(!confirm('Is the form filled out correctly?')){return false;}">
+    <h1>Contact Us</h1>
+    <input type="hidden" name="_charset_" />
+    <section><h2>Personal Details</h2>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEFK0tx3fsnJgoc7iAotM1CUHJ2ZRLQwU&libraries=places&callback=fb_form.initAutocomplete"
+        async defer></script>
+    
+    
+    
+    <div class="form-field form-text form-text required">
+    <label for="name34">First Name<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="text" 
+            id="name34" 
+            name="name" 
+            pattern="[a-zA-Z]{1,30}"
+            minlength="1"
+            maxlength="30"
+            required
+            placeholder="Please fill your first name" >
+        <i class="fas fa-user-tie" aria-hidden="true"></i> 
+    </div>
+        
+</div>
+
+    <div class="form-field form-text form-text required">
+    <label for="name34">Last Name<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="text" 
+            id="lastname" 
+            name="name" 
+            pattern="[a-zA-Z]{1,30}"
+            minlength="1"
+            maxlength="30"
+            required
+            placeholder="Please fill your last name" >
+        <i class="fas fa-user-tie" aria-hidden="true"></i> 
+    </div>
+        
+</div>
+
+<div class="form-field form-text form-tel required">
+    <label for="phone11">Phone<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="tel" 
+            id="phone11" 
+            name="phone" 
+            pattern="[0-9-]{12}"
+            maxlength="12"
+            required
+            placeholder="Please enter a phone number ex. 123-456-7890" >
+        <i class="fas fa-phone" aria-hidden="true"></i> 
+    </div>
+        <span class="form-hint">North American Phones only</span>
+        
+</div>
+
+
+
+<div class="form-field form-text form-text required">
+    <label for="address27">Address<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="text" 
+            id="address27" 
+            name="address" 
+            
+            required
+            
+            
+            placeholder="120 Smith Drive Tampa, Florida" >
+        <i class="fas fas fa-map-marker-alt" aria-hidden="true"></i> 
+    </div>
+        
+</div>
+<div class="zip">
+
+
+<div class="form-field form-text form-text required">
+    <label for="address27">Zip code<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="zip" 
+            id="zipcode" 
+            name="zipcode" 
+            pattern="[0-9]{5}"
+            maxlength="5"
+            minlength="5"
+            required
+            
+            
+            placeholder="Enter your zip code" >
+        <i class="fas fas fa-map-marker-alt" aria-hidden="true"></i> 
+    </div>
+        
+</div>
+</div>
+    <div class="form-field form-text form-email required">
+    <label for="email34">Email<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="email" 
+            id="email34" 
+            name="email" 
+            
+            required
+            
+            
+            placeholder="Please enter a valid email" >
+        <i class="fas fa-envelope" aria-hidden="true"></i> 
+    </div>
+        
+</div>
+
+    <script>
+let autocomplete_address;
+var fb_form = fb_form || {};
+fb_form.acFunctions = fb_form.acFunctions || [];
+
+function initAutocomplete_address() {
+  
+  autocomplete_address = new google.maps.places.Autocomplete(
+      document.getElementById('address'), {types: ['geocode']});
+
+  
+  autocomplete_address.setFields(['address_component']);
+
+  
+  autocomplete_address.addListener('place_changed', fillInAddress);
+}
+fb_form.acFunctions.push(initAutocomplete_address);
+
+fb_form.initAutocomplete = fb_form.initAutocomplete || function() {
+    fb_form.acFunctions.forEach(fn => {
+        fn();
+    })
+}
+
+</script>
+
+
+
+    <div class="form-field form-text form-text required">
+    <label for="brithday">Birthday<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <input type="date" 
+            id="bDate" 
+            name="birthDay" 
+            
+            maxlength="35"
+            max='2020-10-10'
+            required
+            placeholder="Enter a valid birthday ex mm/dd/yyyy" >
+        <i class="fas fa-user-tie" aria-hidden="true"></i> 
+    </div>
+     
+     <script>
+     	var x = 0;
+			function validateBirthDay(){
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1;
+			var yyyy = today.getFullYear();
+ 			if(dd<10){
+        		dd='0'+dd
+    	} 
+    	if(mm<10){
+        		mm='0'+mm
+    	} 
+
+			today = yyyy+'-'+mm+'-'+dd;
+			document.getElementById("bDate").setAttribute("max", today);
+			}
+     </script>
+     
+</div>
+
+
+</section><section><h2>Details</h2><div class="form-field form-text form-textartea required">
+    <label for="message34">Your message<abbr class="required" title="required">*</abbr></label>
+    <div class="input-wrapper with-icon">
+        <textarea 
+            id="message34" 
+            name="message" 
+            required
+            
+            
+            placeholder="what would you like to say" ></textarea>
+        <i class="fas fa-comment-alt" aria-hidden="true"></i> 
+    </div>
+        
+</div>
+
+
+<input type="submit" value="Submit"
+    id="submit34"></section>
+    
+</form>
+</div>
+
+</body>
+<!--Form code ends here-->
+
+</div>
+
+</div>
+
+</body>
+
+ <head>
+ <style type ="text/css" >
+   .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 25px; 
+       width: 100%;
+       
+   }  
+</style>
+</head>
+

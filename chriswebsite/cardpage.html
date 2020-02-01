@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<body background="background.jpg">
+<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>ChrisCoolCite</title>
+
+</body>
+</html>
+
+<style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+} 
+
+div.d {
+  text-align: justify;
+} 
+div.e {
+  text-align: center;
+  padding-top: 100px;
+}
+div.f {
+  text-align: center;
+  padding-top: 50px;
+}
+</style>
+
+<body>
+
+<div class="a">
+<h2>Christopher's Cool Website</h2>
+<p>Test for page 2.</p>
+</div>
+</body>
+
+<!--Navbar-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #DF8700;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #DB9F43;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #b35900;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="index.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="validation.html">Form validation</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="#search">Search</a>
+    
+  </div>
+  
+</div>
+
+
+</body>
+</html>
+
+
+<body>
+
+<!--Information about site and me -->
+<div class="e">
+
+<input type="button" value="Deal Card" id="deal" />
+<br/>
+<br/>
+<br/>
+
+<!--<div id='drop' class='drop'>Trash</div>-->
+
+<img src="https://cdn3.iconfinder.com/data/icons/web-57/100/fb-web-1-512.png" id="drop" class="drop" style="width:180px">
+
+<!--LINK JQUERY-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="jqueryui.js"></script>
+<!--PERSONAL SCRIPT JavaScript-->
+<script type="text/javascript">
+   $(function(){
+      alert("Welcome to the simple card game!");
+   });
+</script>
+
+
+
+<body>
+<script>
+$(init);
+
+function init() {
+  $('.drop').droppable({
+    drop: handleDropEvent
+  });
+}
+
+$('#deal').click(function() {
+  dealCard(randomCard());
+});
+
+var cardURLBase = "http://www.christophercoolcite.world/PNG-cards-1.3/";
+var cardsInDeck = new Array();
+var numberOfCardsInDeck = 52;
+cardsInDeck[0] = "red_joker";
+cardsInDeck[1] = "2_of_clubs";
+cardsInDeck[2] = "2_of_diamonds";
+cardsInDeck[3] = "2_of_hearts";
+cardsInDeck[4] = "2_of_spades";
+cardsInDeck[5] = "3_of_clubs";
+cardsInDeck[6] = "3_of_diamonds";
+cardsInDeck[7] = "3_of_hearts";
+cardsInDeck[8] = "3_of_spades";
+cardsInDeck[9] = "4_of_clubs";
+cardsInDeck[10] = "4_of_diamonds";
+cardsInDeck[11] = "4_of_hearts";
+cardsInDeck[12] = "4_of_spades";
+cardsInDeck[13] = "5_of_clubs";
+cardsInDeck[14] = "5_of_diamonds";
+cardsInDeck[15] = "5_of_hearts";
+cardsInDeck[16] = "5_of_spades";
+cardsInDeck[17] = "6_of_clubs";
+cardsInDeck[18] = "6_of_diamonds";
+cardsInDeck[19] = "6_of_hearts";
+cardsInDeck[20] = "6_of_spades";
+cardsInDeck[21] = "7_of_clubs";
+cardsInDeck[22] = "7_of_diamonds";
+cardsInDeck[23] = "7_of_hearts";
+cardsInDeck[24] = "7_of_spades";
+cardsInDeck[25] = "8_of_clubs";
+cardsInDeck[26] = "8_of_diamonds";
+cardsInDeck[27] = "8_of_hearts";
+cardsInDeck[28] = "8_of_spades";
+cardsInDeck[29] = "9_of_clubs";
+cardsInDeck[30] = "9_of_diamonds";
+cardsInDeck[31] = "9_of_hearts";
+cardsInDeck[32] = "9_of_spades";
+cardsInDeck[33] = "10_of_clubs";
+cardsInDeck[34] = "10_of_diamonds";
+cardsInDeck[35] = "10_of_hearts";
+cardsInDeck[36] = "10_of_spades";
+cardsInDeck[37] = "jack_of_clubs";
+cardsInDeck[38] = "jack_of_diamonds";
+cardsInDeck[39] = "jack_of_hearts";
+cardsInDeck[40] = "jack_of_spades";
+cardsInDeck[41] = "queen_of_clubs";
+cardsInDeck[42] = "queen_of_diamonds";
+cardsInDeck[43] = "queen_of_hearts";
+cardsInDeck[44] = "queen_of_spades";
+cardsInDeck[45] = "king_of_clubs";
+cardsInDeck[46] = "king_of_diamonds";
+cardsInDeck[47] = "king_of_hearts";
+cardsInDeck[48] = "king_of_spades";
+cardsInDeck[49] = "ace_of_clubs";
+cardsInDeck[50] = "ace_of_diamonds";
+cardsInDeck[51] = "ace_of_hearts";
+cardsInDeck[52] = "ace_of_spades";
+cardsInDeck[53] = "black_joker";
+
+/*
+var imgArray = new Array();
+cardsInDeck[0].src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/AC.svg/200px-AC.svg.png";
+cardsInDeck[1].src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/AC.svg/200px-AC.svg.png";
+cardsInDeck[2].src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/AC.svg/200px-AC.svg.png";
+cardsInDeck[3].src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/AC.svg/200px-AC.svg.png";
+cardsInDeck[4].scr = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/AC.svg/200px-AC.svg.png";
+*/
+
+function dealCard(i) {
+  if (numberOfCardsInDeck == 0) return false;
+  var card = document.createElement("img");
+  
+  card.src = cardURLBase + cardsInDeck[i] + ".png";
+  /*card.src = "https://commons.wikimedia.org/wiki/Category:SVG_playing_cards" +
+    cardsInDeck[i] + ".svg";*/
+  /*  
+  card.src = cardsInDeck[1] + "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/AC.svg/200px-AC.svg.png";
+  card.src = cardsInDeck[2] + "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/2S.svg/200px-2S.svg.png";
+  card.src = cardsInDeck[3] + "https://commons.wikimedia.org/wiki/File:3C.svg";
+   */ 
+  
+  //card.alt = " Card " + cardsInDeck[i];
+  card.width = 80;
+  card.height = 120;
+  document.body.appendChild(card);
+  
+  card.id = cardsInDeck[i];
+
+  $(card).draggable();
+  removeCard(i);
+}
+
+function randomCard() {
+  return Math.floor(Math.random() * numberOfCardsInDeck);
+}
+
+function removeCard(c) {
+  // simply make every higher numbered card move down 1
+  for (j = c; j <= numberOfCardsInDeck - 2; j++) {
+    cardsInDeck[j] = cardsInDeck[j + 1];
+  }
+  numberOfCardsInDeck--;
+}
+
+function handleDropEvent(event, ui) {
+  var draggable = ui.draggable;
+  $('#drop').html('Playing card with ID "' + draggable.attr('id') + '" was discarded!');
+  hideImage(draggable);
+}
+
+function hideImage(card) {
+  $(card).hide();
+}
+
+</script>
+</body>
+
+</div>
+
+</body>
+
+ <head>
+ <style type ="text/css" >
+   .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 25px; 
+       width: 100%;
+       
+   }  
+</style>
+</head>
+<div class="footer">
+	<p>Created and coded by Christopher Faircloth</p>
+</div>
